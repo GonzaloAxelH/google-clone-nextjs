@@ -8,6 +8,7 @@ import { useState } from "react";
 import GoogleOptions from "../GoogleOptions/GoogleOptions";
 const Form = styled.form`
   padding: 20px;
+  flex: 2;
 `;
 const InputControl = styled.div`
   display: flex;
