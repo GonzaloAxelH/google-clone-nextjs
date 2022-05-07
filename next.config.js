@@ -2,10 +2,9 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: [
-      "www.google.com"
-    ]
-  }
-}
+    domains: ["www.google.com"],
+  },
+  plugins: [["styled-components", { ssr: true }]],
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
