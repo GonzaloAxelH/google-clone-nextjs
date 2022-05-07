@@ -1,25 +1,26 @@
-
-import React from "react"
-import { useSession, signIn, signOut } from "next-auth/react"
-import User from "../components/User"
+import React from "react";
+import GoogleImage from "../components/GoogleImage/GoogleImage";
+import Layout from "../Layouts/Layout";
+import Footer from "../components/Footer/Footer";
+import SearchForm from "../components/SearchForm/SearchForm";
+import GoogleOptions from "../components/GoogleOptions/GoogleOptions";
+import styled from "styled-components";
+const HomeContainer = styled.section`
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
 
 export default function Home() {
-
-  const { data: session } = useSession()
-  console.log(session)
-  if (session) {
-    return (
-      <div>
-        <h1>
-          Signed in as {session.user.email}
-        </h1>
-        <User />
-        <button onClick={() => signOut()}>Sign Out</button>
-      </div>
-    )
-  }
-  return (<div>
-    <h1>Not signed in <br /></h1>
-    <button onClick={() => signIn()}>Sign in</button>
-  </div>)
+  return (
+    <Layout>
+      <HomeContainer>
+        <GoogleImage />
+        <SearchForm />
+        <Footer />
+      </HomeContainer>
+    </Layout>
+  );
 }
